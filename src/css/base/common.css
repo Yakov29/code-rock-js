@@ -1,0 +1,32 @@
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 70px; */
+}
+body {
+    font-family: 'Montserrat Alternates';
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+}
+button {
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-delay: 50ms;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  width: 1090px;
+  padding-right: 185px;
+  padding-left: 185px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .container {
+  padding-left: 0;
+  padding-right: 0;
+}

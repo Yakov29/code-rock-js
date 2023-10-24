@@ -4,8 +4,22 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
-@import url('./vite-promo.css');
+@import url('./base/common.css');
+@import url('./base/reset.css');
+@import url('./header.css');
+@import url('./years.css');
+@import url('./numbers.css');
+@import url('./rps.css');
+@import url('./calc.css');
+@import url('./time.css');
+@import url('./dino.css');
+@import url('./football.css');
+@import url('./max.css');
+@import url('./team.css');
+@import url('./experts.css');
+@import url('./footer.css');
+@import url('./nickname.css');
+@import url('./thanks.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
