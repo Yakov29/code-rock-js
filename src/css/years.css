@@ -1,2 +1,62 @@
+.years__title {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
 
+.years .container{
+    width: 1090px;
+}
 
+.years__list {
+  display: flex;
+  align-items: center;
+  gap: 210px;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.years__input {
+  width: 220px;
+  padding: 10px 40px 10px 10px;
+  border-radius: 20px;
+  background: #d7d7d7;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.years__input::placeholder {
+  color: #7e7e7e;
+  font-size: 12px;
+}
+
+.years__data {
+  position: relative;
+}
+
+.years__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 100%;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.years__result {
+  color: #039900;
+  text-align: right;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
