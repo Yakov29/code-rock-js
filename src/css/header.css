@@ -141,3 +141,8 @@ header .container {
 .header__list__item:hover .under__link{
   transform: translate(0px, 0px);
 }
+.main {
+  background-image: url(../img/back-image@1x.png);
+  /* background-position: center; */
+  background-size: cover;
+}

@@ -1,6 +1,9 @@
 .is-hidden-nickname {
   opacity: 0;
   pointer-events: none;
+  transition-duration: 250ms;
+  /* transition-delay: 25ms; */
+  transition-timing-function: ease-in;
 }
 .nickname-backdrop {
   position: fixed;
@@ -13,6 +16,9 @@
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   /* position: relative; */
+  transition-duration: 300ms;
+  /* transition-delay: 25ms; */
+  transition-timing-function: ease-in-out;
 }
 .nickname {
   background-color: #fff;
@@ -141,4 +147,7 @@
 .nickname__svg:nth-of-type(3) {
   bottom: 56px;
   right: 85px;
+}
+.input--error {
+  outline: 1px solid #ef4242;
 }

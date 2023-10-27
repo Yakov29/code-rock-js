@@ -1,0 +1,29 @@
+.football {
+  padding-bottom: 0;
+}
+.football .container {
+  padding-bottom: 36px;
+}
+.football__title {
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+}
+
+.football-block {
+  width: 720px;
+  height: 220px;
+  border-radius: 37px;
+  border: 2px solid #000;
+  background-color: #5abb58;
+  position: relative;
+  cursor: url(../img/ball-cursor.svg), auto;
+}
+.ball {
+    background-image: url(../img/ball.png);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 85px;
+    left: 92px;
+}

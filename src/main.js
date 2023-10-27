@@ -1,0 +1,13 @@
+import "./js/nickname";
+import "./js/header";
+import "./js/years";
+import "./js/numbers";
+import "./js/rps";
+import "./js/calc";
+import "./js/time";
+import "./js/dino";
+import "./js/football";
+import "./js/max";
+import "./js/team";
+import "./js/experts";
+import "./js/thanks";
