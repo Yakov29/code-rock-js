@@ -21,10 +21,18 @@ let i = Array.from(cardsElems).findIndex((card) =>
   card.classList.contains("is-shown")
 ); //!! error
 
+function removeClass(array, className) {
+  array.forEach((listItem) => {
+    listItem.classList.remove(className);
+  });
+}
+
 function showNext() {
+  removeClass(cardsElems, "is-shown");
+  removeClass(bulletsElems, "active-bullet");
   if (i === cardsElems.length - 1) {
-    cardsElems[i].classList.remove("is-shown");
-    bulletsElems[i].classList.remove("active-bullet");
+    // cardsElems[i].classList.remove("is-shown");
+    // bulletsElems[i].classList.remove("active-bullet");
     i = 0;
     cardsElems[i].animate(
       [{ transform: "translate(100px)" }, { transform: "translate(0px)" }],
@@ -38,6 +46,7 @@ function showNext() {
 
     return;
   }
+
   cardsElems[i].classList.remove("is-shown");
   cardsElems[i + 1].classList.add("is-shown");
   cardsElems[i + 1].animate(
@@ -53,8 +62,10 @@ function showNext() {
 }
 
 function showPrevious() {
+  removeClass(cardsElems, "is-shown");
+  removeClass(bulletsElems, "active-bullet");
   if (i === 0) {
-    cardsElems[i].classList.remove("is-shown");
+    // cardsElems[i].classList.remove("is-shown");
     bulletsElems[i].classList.remove("active-bullet");
     i = cardsElems.length - 1;
     cardsElems[i].animate(
@@ -68,6 +79,7 @@ function showPrevious() {
     bulletsElems[i].classList.add("active-bullet");
     return;
   }
+
   cardsElems[i].classList.remove("is-shown");
   cardsElems[i - 1].classList.add("is-shown");
   cardsElems[i - 1].animate(
@@ -132,10 +144,15 @@ refs.paginationEl.addEventListener("click", (e) => {
     const indexOfCurrentElem = Array.from(cardsElems).findIndex((card) =>
       card.classList.contains("is-shown")
     );
+
+    removeClass(bulletsElems, "active-bullet");
+
     if (indexOfClickedElem !== indexOfCurrentElem) {
+      removeClass(cardsElems, "is-shown");
       if (indexOfClickedElem > indexOfCurrentElem) {
         cardsElems[indexOfCurrentElem].classList.remove("is-shown");
-        bulletsElems[indexOfCurrentElem].classList.remove("active-bullet");
+        // bulletsElems[indexOfCurrentElem].classList.remove("active-bullet");
+        // removeClass(bulletsElems, "active-bullet");
         cardsElems[indexOfClickedElem].classList.add("is-shown");
         cardsElems[indexOfClickedElem].animate(
           [{ transform: "translate(100px)" }, { transform: "translate(0px)" }],
@@ -148,7 +165,9 @@ refs.paginationEl.addEventListener("click", (e) => {
       }
       if (indexOfClickedElem < indexOfCurrentElem) {
         cardsElems[indexOfCurrentElem].classList.remove("is-shown");
-        bulletsElems[indexOfCurrentElem].classList.remove("active-bullet");
+        // bulletsElems[indexOfCurrentElem].classList.remove("active-bullet");
+        // removeClass(bulletsElems, "active-bullet");
+
         cardsElems[indexOfClickedElem].classList.add("is-shown");
         cardsElems[indexOfClickedElem].animate(
           [{ transform: "translate(-100px)" }, { transform: "translate(0px)" }],

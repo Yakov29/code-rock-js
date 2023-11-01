@@ -6,6 +6,11 @@
   background-color: #000;
   margin-left: auto;
   margin-right: auto;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
 }
 .dino {
   padding-top: 0;
