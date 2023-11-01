@@ -1,29 +1,29 @@
 <section class="rps">
   <div class="container">
     <h2 class="rps__title">Камінь - ножиці - папір</h2>
-    <ul class="rps__variants">
-      <li class="rps__variants__item">
-        <img src="" alt="" />
-      </li>
-      <li class="rps__variants__item">
-        <img src="" alt="" />
-      </li>
-      <li class="rps__variants__item">
-        <img src="" alt="" />
-      </li>
-    </ul>
-    <ul class="rps__results">
-        <li class="rps__results__item">
-            <p class="rps__results__item__description">Рахунок:</p>
-        </li>
-        <li class="rps__results__item">
-            <p class="rps__results__item__description">Комп’ютер - </p>
-        </li>
-        <li class="rps__results__item">
-            <p class="rps__results__item__description">Ви - 0</p>
-        </li>
-    </ul>
-    <span class="rps__msg">Ви виграли раунд!</span>
-    <button type="button" class="rps__button">Варіант комп’ютера</button>
+    <div class="rps-block">
+      <div class="rps-box">
+        <ul class="rps__list">
+          <li class="rps__item">
+            <img src="../img/stone.png" alt="Rock" class="rps__pic" />
+          </li>
+          <li class="rps__item">
+            <img src="../img/scissors.png" alt="Scissors" class="rps__pic" />
+          </li>
+          <li class="rps__item">
+            <img src="../img/paper.png" alt="Paper" class="rps__pic" />
+          </li>
+        </ul>
+        <div class="score">
+          <h4 class="score__subtitle">Рахунок:</h4>
+          <p class="score__text">Комп’ютер - <span data-rps-scorecomp>0</span></p>
+          <p class="score__text">Ви - <span data-rps-urscore>0</span></p>
+        </div>
+      </div>
+      <p class="rps__message rps--success" data-rps-message>Ви виграли раунд!</p>
+      <button type="button" data-rps-btn class="rps__btn">
+        Варіант комп’ютера
+      </button>
+    </div>
   </div>
 </section>

@@ -7,8 +7,8 @@
   text-align: center;
 }
 
-.years .container{
-    width: 1090px;
+.years .container {
+  width: 1090px;
 }
 
 .years__list {
@@ -52,7 +52,7 @@
 }
 
 .years__result {
-  color: #039900;
+  /* color: #039900; */
   text-align: right;
 
   font-size: 12px;
@@ -60,3 +60,10 @@
   font-weight: 400;
   line-height: normal;
 }
+.years--success {
+  color: #039900;
+}
+.years--lose {
+  color: #900;
+}
+
