@@ -7,9 +7,10 @@
           <input
             type="text"
             placeholder="Введіть рік народження"
+            data-years-input
             class="years__input"
           />
-          <button class="years__button" type="submit">
+          <button class="years__button" type="button" data-years-btn>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -33,7 +34,7 @@
         </div>
       </li>
       <li class="years__list__item">
-        <span class="years__result">Ви народилися у високосний рік!</span>
+        <span class="years__result years--success">Ви народилися у високосний рік!</span>
       </li>
     </ul>
   </div>
