@@ -2,12 +2,14 @@
 const themeToggle = document.querySelector('.switchInput');
 
 // Получаем все секции, контейнер и header
+const modalThank = document.querySelector(".thanks__modal")
 const sections = document.querySelectorAll('section');
 const container = document.querySelectorAll('.container');
 const header = document.querySelector('header');
 const textElements = document.querySelectorAll('p, span, label, h1, h2, h3, h4, h5, h6, a');
 const footballBlock = document.querySelector(".football-block");
 const footer = document.querySelector("footer");
+const thanksClose = document.querySelector(".thanks__modal__close")
 const nicknameClose = document.querySelector(".nickname__close__svg")
 const nickname = document.querySelector(".nickname");
 const headerItem = document.querySelector(".header__list__item")
@@ -40,8 +42,10 @@ function toggleTheme() {
     underLinkItem.forEach(elem =>{
         elem.classList.add("underLinkHover")
     })
+    modalThank.style.backgroundColor = "#333"
     underLink.style.backgroundColor = "#333"
     underLinkBorder.style.border = "2px solid white"
+    thanksClose.firstElementChild.firstElementChild.setAttribute("stroke", "white")
     nicknameClose.firstElementChild.setAttribute("stroke", "white");
     console.log(nicknameClose.firstElementChild.stroke)
     nickname.style.backgroundColor = "#333"
@@ -65,6 +69,8 @@ function toggleTheme() {
     underLinkItem.forEach(elem =>{
         elem.classList.remove("underLinkHover")
     })
+    modalThank.style.backgroundColor = "white"
+    thanksClose.firstElementChild.firstElementChild.setAttribute("stroke", "black")
     underLink.style.backgroundColor = "white"
     underLinkBorder.style.border = "2px solid black"
     nicknameClose.firstElementChild.setAttribute("stroke", "#333");
