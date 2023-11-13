@@ -35,9 +35,10 @@
   display: flex;
   justify-content: flex-end;
   height: 35px;
+  position: relative;
 }
 .experts__item:nth-child(4) {
-    width: 441px;
+  width: 441px;
 }
 .experts__item:nth-child(5) {
   width: 380px;
@@ -82,4 +83,37 @@
   width: 489px;
   display: flex;
   justify-content: center;
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+}
+.experts__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.gallery-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff75;
+  opacity: 0;
+  padding-top: 41px;
+}
+.gallery-box h3,
+.gallery-box p {
+  color: #000;
+  text-align: center;
+  font-size: 8px;
+  line-height: 170%;
+}
+.gallery__item:hover .gallery-box {
+  backdrop-filter: blur(1.5px);
+  opacity: 1;
 }
