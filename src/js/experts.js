@@ -11,7 +11,7 @@ const scientists = [
   {
     name: "Isaac",
     surname: "Newton",
-    url: "../img/newton.webp",
+    url: "../img/isaac.jpg",
     alt: "Isaac Newton",
     born: 1643,
     dead: 1727,
@@ -47,7 +47,7 @@ const scientists = [
   {
     name: "Nicolaus",
     surname: "Copernicus",
-    url: "../img/copernicus.jpg",
+    url: "../img/copernicusn.webp",
     alt: "Nicolaus Copernicus",
     born: 1473,
     dead: 1543,
@@ -121,7 +121,6 @@ render(scientists);
 //# Btns functions begin
 
 function render(arrayOfScientists) {
-  console.log("click");
   galleryEl.innerHTML = "";
   arrayOfScientists.forEach((scientist) => {
     galleryEl.innerHTML += `<li class="gallery__item"><img src="${scientist.url}" alt="${scientist.alt}" class="experts__img" /><div class="gallery-box"><h3>${scientist.name} ${scientist.surname}</h3><p>${scientist.born} - ${scientist.dead}</p></div></li>`;
@@ -165,6 +164,56 @@ function filterSurnameLetter() {
   render(filteredScientists);
 }
 
+function sortScientistsByYears() {
+  const sortedScientists = scientists.toSorted((scientist, nextScientist) => {
+    const scientistLived = scientist.dead - scientist.born;
+    const nextScientistLived = nextScientist.dead - nextScientist.born;
+    return scientistLived - nextScientistLived;
+  });
+  render(sortedScientists);
+}
+
+function filterScientistsByName() {
+  const filteredScientists = scientists.filter(
+    (elem) => elem.name[0].toUpperCase() !== "A"
+  );
+  render(filteredScientists);
+}
+
+function findLatestScientist() {
+  let latestScientist = scientists[0];
+  scientists.forEach((elem) => {
+    if (elem.born > latestScientist.born) {
+      latestScientist = elem;
+    }
+  });
+  render([latestScientist]);
+}
+
+function findTwoScientists() {
+  let maxScientist = scientists[0];
+  let minScientist = scientists[0];
+  const maxScientistLived = maxScientist.dead - maxScientist.born;
+  const minScientistLived = minScientist.dead - minScientist.born;
+  scientists.forEach((elem) => {
+    const currentScientistLived = elem.dead - elem.born;
+    if (currentScientistLived > maxScientist.dead - maxScientist.born) {
+      maxScientist = elem;
+    }
+    if (currentScientistLived < minScientist.dead - minScientist.born) {
+      minScientist = elem;
+    }
+  });
+  render([maxScientist, minScientist]);
+}
+
+function filterExpertsByFullname() {
+  const filteredExperts = scientists.filter(
+    (elem) => elem.name[0] === elem.surname[0]
+  );
+  render(filteredExperts);
+}
+
 //# Btns functions end
 
 btnsListEl.addEventListener("click", (e) => {
@@ -181,6 +230,16 @@ btnsListEl.addEventListener("click", (e) => {
       scientistByAlpabet();
     } else if (indexOfClikedElem === 3) {
       filterSurnameLetter();
+    } else if (indexOfClikedElem === 4) {
+      sortScientistsByYears();
+    } else if (indexOfClikedElem === 5) {
+      filterScientistsByName();
+    } else if (indexOfClikedElem === 6) {
+      findLatestScientist();
+    } else if (indexOfClikedElem === 7) {
+      findTwoScientists();
+    } else if (indexOfClikedElem === 8) {
+      filterExpertsByFullname();
     }
   }
 });
