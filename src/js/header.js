@@ -18,7 +18,6 @@ const underLinkList= document.querySelector(".under__link__list")
 const underLinkItem = document.querySelectorAll(".under__link__list__item")
 const underLink = document.querySelector(".under__link")
 headerItem.addEventListener("click", () => {
-    // underLink.classList.add("is-shown_header")
     if (underLink.classList.contains("is-shown_header")){
         underLink.classList.remove("is-shown_header")
     } else {
