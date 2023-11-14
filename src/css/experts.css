@@ -105,6 +105,9 @@
   background-color: #ffffff75;
   opacity: 0;
   padding-top: 41px;
+  transition-duration: 300ms;
+  transition-delay: 45ms;
+  transition-timing-function: ease-in-out;
 }
 .gallery-box h3,
 .gallery-box p {
@@ -116,4 +119,7 @@
 .gallery__item:hover .gallery-box {
   backdrop-filter: blur(1.5px);
   opacity: 1;
+  transition-duration: 300ms;
+  transition-delay: 45ms;
+  transition-timing-function: ease-in-out;
 }
