@@ -61,9 +61,9 @@
   line-height: normal;
 }
 .years--success {
-  color: #039900;
+  color: #039900 !important;
 }
 .years--lose {
-  color: #900;
+  color: #900 !important;
 }
 
