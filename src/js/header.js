@@ -17,6 +17,7 @@ const underLinkBorder= document.querySelector(".under__link__border")
 const underLinkList= document.querySelector(".under__link__list")
 const underLinkItem = document.querySelectorAll(".under__link__list__item")
 const underLink = document.querySelector(".under__link")
+const body = document.querySelector("body")
 headerItem.addEventListener("click", () => {
     if (underLink.classList.contains("is-shown_header")){
         underLink.classList.remove("is-shown_header")
@@ -41,6 +42,7 @@ function toggleTheme() {
     underLinkItem.forEach(elem =>{
         elem.classList.add("underLinkHover")
     })
+    body.style.backgroundImage = "url('../img/back-image@1x.png')"
     modalThank.style.backgroundColor = "#333"
     underLink.style.backgroundColor = "#333"
     underLinkBorder.style.border = "2px solid white"
@@ -69,6 +71,7 @@ function toggleTheme() {
         elem.classList.remove("underLinkHover")
     })
     modalThank.style.backgroundColor = "white"
+    body.style.backgroundImage = "url('../img/back-image@1x.png')"
     thanksClose.firstElementChild.firstElementChild.setAttribute("stroke", "black")
     underLink.style.backgroundColor = "white"
     underLinkBorder.style.border = "2px solid black"
