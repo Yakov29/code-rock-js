@@ -49,7 +49,7 @@ let isAlive = setInterval(function () {
   );
 
   // Виявити зіткнення
-  if (isRunning && cactusLeft < 45 && cactusLeft > 0 && dinoTop >= 120) {
+  if (isRunning && cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 120) {
     // зіткнення
     alert("Гра закінчена!");
     dino.style.backgroundImage = "url('../img/dino-dead.png')";
