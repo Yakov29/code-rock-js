@@ -5,6 +5,7 @@ const message = document.getElementById("message");
 let isJumping = false;
 let isRunning = false;
 let isGameStarted = false;
+let cactusInterval;
 
 function jump() {
   if (!isRunning) {
@@ -34,8 +35,15 @@ function startRunning() {
     isGameStarted = true;
     isRunning = true;
     dino.style.backgroundImage = "url('../img/dino-run1.png')"; // Встановити початкове зображення бігу
-    setInterval(toggleRunImage, 100); // Змінювати зображення бігу кожну секунду
+    cactusInterval = setInterval(placeCactus, 1000); // Розміщувати кактуси кожну секунду
+    setInterval(toggleRunImage, 100); // Змінювати зображення бігу кожну 0.1 секунду
     message.style.display = "none"; // Приховати початкове повідомлення
+  }
+}
+
+function placeCactus() {
+  if (isRunning) {
+    // Ваш код для розміщення кактусів тут
   }
 }
 
@@ -71,6 +79,7 @@ function resetGame() {
   // Скинути стан гри і показати початкове повідомлення
   isRunning = false;
   isGameStarted = false;
+  clearInterval(cactusInterval); // Очистити інтервал для розміщення кактусів
   setTimeout(function () {
     dino.style.backgroundImage = "url('../img/dino-run1.png')"; // Встановити зображення звичайного бігу після затримки
   }, 2000); // Відрегулювати затримку за потребою
