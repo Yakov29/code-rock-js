@@ -20,7 +20,7 @@ function calculate() {
           if (num2 !== 0) {
             resultField.value = num1 / num2;
           } else {
-            resultField.value = "Деление на ноль!";
+            resultField.value = "Заборонено!";
           }
           break;
         default:
