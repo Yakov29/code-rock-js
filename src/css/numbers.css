@@ -1,7 +1,6 @@
-
 .numbers .container {
-    padding-right: 257px;
-    padding-left: 257px;
+  padding-right: 257px;
+  padding-left: 257px;
 }
 .numbers__title {
   color: #000;
@@ -48,10 +47,10 @@
   display: none;
 }
 .numbers--success {
-  color: #039900;
+  color: #039900 !important;
   display: block;
 }
 .numbers--lose {
-  color: #900;
+  color: #900 !important;
   display: block;
 }
