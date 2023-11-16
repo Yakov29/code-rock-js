@@ -1,8 +1,8 @@
 .rps {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 .rps .container {
-padding-bottom: 36px;
+  padding-bottom: 36px;
 }
 .rps__title {
   color: #000;
@@ -38,6 +38,9 @@ padding-bottom: 36px;
   justify-content: center;
   align-items: center;
   margin-right: 38px;
+  transition-duration: 250ms;
+  transition-delay: 40ms;
+  transition-timing-function: ease-in-out;
 }
 .rps__item:last-child {
   margin-right: 0;
@@ -81,4 +84,10 @@ padding-bottom: 36px;
 }
 .rps--lose {
   color: #900;
+}
+.rps--selected {
+  background-color: #3f3f3f;
+  transition-duration: 250ms;
+  transition-delay: 40ms;
+  transition-timing-function: ease-in-out;
 }
