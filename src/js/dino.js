@@ -1,11 +1,13 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
 const message = document.getElementById("message");
+const scoreElement = document.getElementById("score"); // Доданий елемент для відображення рахунку
 
 let isJumping = false;
 let isRunning = false;
 let isGameStarted = false;
 let cactusInterval;
+let score = 0; // Лічильник очок
 
 function jump() {
   if (!isRunning) {
@@ -44,6 +46,11 @@ function startRunning() {
 function placeCactus() {
   if (isRunning) {
     // Ваш код для розміщення кактусів тут
+    if (!isJumping) {
+      // Якщо динозавр не стрибає, збільшити рахунок при переході через кактус
+      score++;
+      scoreElement.textContent = `Score: ${score}`;
+    }
   }
 }
 
@@ -59,14 +66,15 @@ let isAlive = setInterval(function () {
   // Виявити зіткнення
   if (isRunning && cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 120) {
     // зіткнення
-    alert("Гра закінчена!");
+    alert(`Гра закінчена! Ваш рахунок: ${score}`);
     dino.style.backgroundImage = "url('../img/dino-dead.png')";
     resetGame();
   }
 }, 10);
 
 document.addEventListener("keydown", function (event) {
-  if (event.code === "KeyW") {
+  console.log(event.code)
+  if (event.code === "ArrowUp", "KeyW", "Space") {
     if (!isGameStarted) {
       startRunning();
     } else {
@@ -82,6 +90,8 @@ function resetGame() {
   clearInterval(cactusInterval); // Очистити інтервал для розміщення кактусів
   setTimeout(function () {
     dino.style.backgroundImage = "url('../img/dino-run1.png')"; // Встановити зображення звичайного бігу після затримки
+    score = 0; // Скинути лічильник очок
+    scoreElement.textContent = "Score: 0"; // Оновити відображення рахунку
   }, 2000); // Відрегулювати затримку за потребою
   message.style.display = "block";
 }

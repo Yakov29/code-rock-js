@@ -40,6 +40,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
   font-size: 24px;
 }
@@ -49,6 +50,7 @@
   height: 200px;
   border-bottom: 1px solid black;
   margin: auto;
+  position: relative;
 }
 
 #dino {
@@ -73,11 +75,25 @@
   50% {
     top: 80px;
   }
-
-
+  
+  70%{
+    top: 90px;
+  }
+  90%{
+    top: 130px;
+  }
   100% {
     top: 150px;
   }
+}
+/* Додано стилі для рядка з очками */
+.score {
+  position: absolute;
+  top: 10px; /* Розташовано у верхній частині вікна гри */
+  right: 10px;
+  color: #666; /* Сірий колір тексту */
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
