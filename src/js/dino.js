@@ -2,6 +2,12 @@ const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
 const message = document.getElementById("message");
 const scoreElement = document.getElementById("score"); // Доданий елемент для відображення рахунку
+const bestscoreelement = document.querySelector("[data-best-text]")
+if (!localStorage.getItem("bestScore")) {
+  localStorage.setItem("bestScore", "0")
+} else {
+  bestscoreelement.textContent = localStorage.getItem("bestScore")
+}
 
 let isJumping = false;
 let isRunning = false;
@@ -50,6 +56,11 @@ function placeCactus() {
       // Якщо динозавр не стрибає, збільшити рахунок при переході через кактус
       score++;
       scoreElement.textContent = `Score: ${score}`;
+      if (localStorage.getItem("bestScore") < score){
+        localStorage.setItem("bestScore", String(score))
+      }
+      
+      bestscoreelement.textContent = localStorage.getItem("bestScore")
     }
   }
 }
@@ -74,7 +85,7 @@ let isAlive = setInterval(function () {
 
 document.addEventListener("keydown", function (event) {
   console.log(event.code)
-  if (event.code === "ArrowUp", "KeyW", "Space") {
+  if (event.code === "ArrowUp") {
     if (!isGameStarted) {
       startRunning();
     } else {
