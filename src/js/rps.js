@@ -65,17 +65,52 @@ btnEl.addEventListener("click", (e) => {
     showScore();
     clearItems();
   }
+  function draw() {
+    messageTextEl.textContent =
+      "Нічия. Ви з компьютером думаєте на одному рівні.";
+    showScore();
+    clearItems();
+  }
+  function gameFn(yourAns, botAns) {
+    switch (yourAns) {
+      case "rock":
+        if (botAns === "paper") {
+          lose();
+          return;
+        }
+        win();
+        return;
+        break;
+      case "paper":
+        if (botAns === "scissors") {
+          lose();
+          return;
+        }
+        win();
+        break;
+      case "scissors":
+        if (botAns === "rock") {
+          lose();
+          return;
+        }
+        win();
+        return;
+      default:
+        console.log("Error");
+        return;
+    }
+  }
   if (yourSelectedElem !== "") {
     const arrayOfElems = ["rock", "scissors", "paper"];
     const botAnswer = arrayOfElems[Math.round(Math.random() * 2 - 0)];
     console.log(botAnswer);
     console.log(yourSelectedElem);
     if (botAnswer === yourSelectedElem) {
-      win();
+      draw();
       return;
     }
     if (botAnswer !== yourSelectedElem) {
-      lose();
+      gameFn(yourSelectedElem, botAnswer);
       return;
     }
   }
