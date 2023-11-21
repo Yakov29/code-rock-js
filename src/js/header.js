@@ -9,6 +9,7 @@ const header = document.querySelector('header');
 const textElements = document.querySelectorAll('p, span, label, h1, h2, h3, h4, h5, h6, a');
 const footballBlock = document.querySelector(".football-block");
 const footer = document.querySelector("footer");
+const mainElement = document.querySelector("main"); // Додано <main>
 const thanksClose = document.querySelector(".thanks__modal__close")
 const nicknameClose = document.querySelector(".nickname__close__svg")
 const nickname = document.querySelector(".nickname");
@@ -18,6 +19,7 @@ const underLinkList= document.querySelector(".under__link__list")
 const underLinkItem = document.querySelectorAll(".under__link__list__item")
 const underLink = document.querySelector(".under__link")
 const body = document.querySelector("body")
+
 headerItem.addEventListener("click", () => {
     if (underLink.classList.contains("is-shown_header")){
         underLink.classList.remove("is-shown_header")
@@ -25,8 +27,6 @@ headerItem.addEventListener("click", () => {
         underLink.classList.add("is-shown_header")
     }
 })
-console.log(headerItem)
-console.log(underLink)
 
 // Функция для обработки изменения темы
 function toggleTheme() {
@@ -42,7 +42,7 @@ function toggleTheme() {
     underLinkItem.forEach(elem =>{
         elem.classList.add("underLinkHover")
     })
-    body.style.backgroundImage = "url('../img/back-image@1x.png')"
+    mainElement.style.backgroundImage = "url('../img/back-image@1x.png')"
     modalThank.style.backgroundColor = "#333"
     underLink.style.backgroundColor = "#333"
     underLinkBorder.style.border = "2px solid white"
@@ -71,7 +71,7 @@ function toggleTheme() {
         elem.classList.remove("underLinkHover")
     })
     modalThank.style.backgroundColor = "white"
-    body.style.backgroundImage = "url('../img/back-image@1x.png')"
+    mainElement.style.backgroundImage = "url('../img/back-image@1x.png')"
     thanksClose.firstElementChild.firstElementChild.setAttribute("stroke", "black")
     underLink.style.backgroundColor = "white"
     underLinkBorder.style.border = "2px solid black"
@@ -93,3 +93,82 @@ themeToggle.addEventListener("change", toggleTheme);
 
 // Вызываем функцию toggleTheme() для установки начальных стилей
 toggleTheme();
+
+
+const numerical = [
+  document.querySelector(".years"),
+  document.querySelector(".numbers"),
+  document.querySelector(".calc"),
+  document.querySelector(".time"),
+  document.querySelector(".max")
+];
+const playing = [
+  document.querySelector(".rps"),
+  document.querySelector(".dino__section"),
+  document.querySelector(".football")
+];
+const acquaintance = [
+  document.querySelector(".team"),
+  document.querySelector(".experts")
+];
+const sectionItem = document.querySelector(".under__link__list");
+const sectionItems = document.querySelectorAll(".under__link__list__item");
+
+sectionItem.addEventListener("click", (e) => {
+  const clickedElement = e.target.closest('.under__link__list__item');
+  if (clickedElement) {
+    const indexOfClickedElem = Array.from(sectionItems).indexOf(clickedElement);
+
+    if (indexOfClickedElem === 0) {
+      numerical.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      playing.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      acquaintance.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      // Показати тільки секцію numerical при індексі 0
+      playing.forEach((elem, index) => {
+        elem.style.display = "none";
+      });
+      acquaintance.forEach((elem, index) => {
+        elem.style.display = "none";
+      });
+
+    } else if (indexOfClickedElem === 2) {
+      numerical.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      playing.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      acquaintance.forEach((elem) => {
+        elem.style.display = "block";
+      });
+      // Показати тільки секцію numerical при індексі 0
+      numerical.forEach((elem, index) => {
+        elem.style.display = "none";
+      });
+      playing.forEach((elem, index) => {
+        elem.style.display = "none";
+      })} else if (indexOfClickedElem === 1) {
+        numerical.forEach((elem) => {
+          elem.style.display = "block";
+        });
+        playing.forEach((elem) => {
+          elem.style.display = "block";
+        });
+        acquaintance.forEach((elem) => {
+          elem.style.display = "block";
+        });
+        // Показати тільки секцію numerical при індексі 0
+        numerical.forEach((elem, index) => {
+          elem.style.display = "none";
+        });
+        acquaintance.forEach((elem, index) => {
+          elem.style.display = "none";
+        })}
+  }
+});
