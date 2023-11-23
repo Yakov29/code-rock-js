@@ -6,7 +6,9 @@
   line-height: normal;
   text-align: center;
 }
-
+.years::before{
+  display: none;
+}
 .years .container {
   width: 1090px;
 }

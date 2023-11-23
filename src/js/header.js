@@ -19,6 +19,7 @@ const underLinkList= document.querySelector(".under__link__list")
 const underLinkItem = document.querySelectorAll(".under__link__list__item")
 const underLink = document.querySelector(".under__link")
 const body = document.querySelector("body")
+const sectionBefore = document.querySelectorAll(".main section")
 
 headerItem.addEventListener("click", () => {
     if (underLink.classList.contains("is-shown_header")){
@@ -41,6 +42,11 @@ function toggleTheme() {
     })
     underLinkItem.forEach(elem =>{
         elem.classList.add("underLinkHover")
+    })
+    console.log(sectionBefore) 
+    
+    sectionBefore.forEach((elem) => {
+      elem.style.setProperty("--cl", "white")
     })
     mainElement.style.backgroundImage = "url('../img/back-image@1x.png')"
     modalThank.style.backgroundColor = "#333"
@@ -69,6 +75,9 @@ function toggleTheme() {
     })
     underLinkItem.forEach(elem =>{
         elem.classList.remove("underLinkHover")
+    })
+    sectionBefore.forEach((elem) => {
+      elem.style.setProperty("--cl", "#000")
     })
     modalThank.style.backgroundColor = "white"
     mainElement.style.backgroundImage = "url('../img/back-image@1x.png')"
@@ -129,7 +138,6 @@ sectionItem.addEventListener("click", (e) => {
       acquaintance.forEach((elem) => {
         elem.style.display = "block";
       });
-      // Показати тільки секцію numerical при індексі 0
       playing.forEach((elem, index) => {
         elem.style.display = "none";
       });
@@ -147,7 +155,6 @@ sectionItem.addEventListener("click", (e) => {
       acquaintance.forEach((elem) => {
         elem.style.display = "block";
       });
-      // Показати тільки секцію numerical при індексі 0
       numerical.forEach((elem, index) => {
         elem.style.display = "none";
       });
@@ -163,7 +170,6 @@ sectionItem.addEventListener("click", (e) => {
         acquaintance.forEach((elem) => {
           elem.style.display = "block";
         });
-        // Показати тільки секцію numerical при індексі 0
         numerical.forEach((elem, index) => {
           elem.style.display = "none";
         });

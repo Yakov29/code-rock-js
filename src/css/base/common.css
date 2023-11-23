@@ -27,7 +27,7 @@ button:hover {
   margin-right: auto;
   background-color: #fff;
 }
-.container::before {
+/* .container::before {
   content: "";
   position: absolute;
   top: -36px;
@@ -41,10 +41,27 @@ button:hover {
 }
 .container:nth-child(2n):before {
   top: -36px;
+} */
+:root{
+  --cl:#000
+}
+main section::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  height: 1px;
+  width: 536px;
+  background-color: var(--cl);
+  display: block;
+  z-index: 3;
 }
 section {
   padding-top: 36px;
   padding-bottom: 36px;
+  position: relative;
 }
 header .container {
   padding-left: 0;
