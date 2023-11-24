@@ -30,11 +30,9 @@
   margin-bottom: 36px;
 }
 .dino-game {
-  background-color: #acacac;
   width: 720px;
   height: 241px;
   border-radius: 20px;
-  margin-bottom: 100px;
 }
 #message {
   position: absolute;
