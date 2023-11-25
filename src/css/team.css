@@ -10,9 +10,14 @@
 .team__list {
   display: flex;
   justify-content: space-between;
+ 
 }
 .team__item {
   /* margin-right: 36px; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -91,4 +96,8 @@
 .team__btn:focus {
   border: none;
   outline: none;
+}
+
+.team__description span{
+  display: block;
 }
