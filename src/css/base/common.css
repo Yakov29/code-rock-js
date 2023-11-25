@@ -27,6 +27,11 @@ button:hover {
   margin-right: auto;
   background-color: #fff;
 }
+.white--bac {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* .container::before {
   content: "";
   position: absolute;
@@ -42,10 +47,10 @@ button:hover {
 .container:nth-child(2n):before {
   top: -36px;
 } */
-:root{
-  --cl:#000
+:root {
+  --cl: #000;
 }
-main section::before{
+main section::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -97,10 +102,18 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 p {
   margin: 0;
   padding: 0;
+}
+.main {
+  /* background-color: #333; */
 }
